@@ -1,8 +1,6 @@
 # Den hurtige introduktion til Databaser på DAT2
 
-I denne introduktion vil jeg hurtigt gennemgå hvordan vi tidligere har brugt filer til at gemme data, og hvordan vi i fremadrettet gerne vil bruge databaser til at gemme data.
-
-Den gennemgang vores undervisere har lavet, har fokus på en masse nøgleord, som vi skal kunne bruge til eksamen. Jeg vil forsøge både at bruge et mere naturligt sprog og at blande disse ord ind hvor det giver mening.
+I denne introduktion vil jeg hurtigt gennemgå hvordan vi tidligere har brugt filer til at gemme data, og hvordan vi fremadrettet gerne vil bruge databaser til at gemme data.
 
 The code is written for 2. semester on the Datamatiker education in Lyngby.
 
@@ -142,7 +140,7 @@ Vi kan se en kolonne `movie_title`, som svarer til vores `Title` felt, osv.
 
 Den gang vi læste data fra filen, havde vi en IO pakke med en `readFile` metode. Nu har vi i stedet en `DatabaseConnector` som svarer til at vi åbner filen. Så har vi en `DataMapper` som både beder databasen om at sende nogle rækker (baseret på nogle kriterier) og derefter parser data og laver objekter som vores program kan bruge.
 
-`DatabaseConnector` vil jeg sige lidt mere om senere, men først kigger vi kort på en `MovieMapper`.
+`DatabaseConnector` vil jeg ikke sige så meget om, men i stedet fokusere på en  `MovieMapper`.
 
 ````java
 import ...
@@ -160,7 +158,7 @@ public class MovieMapper
             Asks the database for at list of movies with movie_title matching parameter title.
             Returns a list of movie objects.
      */
-    public List<Movie> getMoviesByTitle(String title) throws DatabaseExeption
+    public List<Movie> getMoviesByTitle(String title) throws DatabaseException
     {
         List<Movie> movies = new ArrayList<>();
         //Den rå SQL statement, dog uden vores søgeparameter
@@ -207,4 +205,5 @@ Vi har lavet vores egen DatabaseException fordi vi skal håndtere en masse metod
 
 Derfor er det smart hvis der kun er et sted, hvor vi skal fjerne vores `e.printStackTrace()`, og nøjes med at printe en mere brugervenlig besked. Ligesom Tess forsøgte at lære os at bruge en `UI` klasse til at printe beskeder til brugeren, i stedet for at bruge `sout`.
 
-Læg mærke til, at vi kan slå nestede `try` statements sammen
+Læg mærke til, at vi kan slå nestede `try` statements sammen, og vi kan have flere `catch` statements til at fange (og håndtere) forskellige typer af Exceptions.
+
