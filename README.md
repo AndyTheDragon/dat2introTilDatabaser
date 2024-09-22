@@ -207,3 +207,4 @@ Derfor er det smart hvis der kun er et sted, hvor vi skal fjerne vores `e.printS
 
 Læg mærke til, at vi kan slå nestede `try` statements sammen, og vi kan have flere `catch` statements til at fange (og håndtere) forskellige typer af Exceptions.
 
+Brug disse snippets som udgangspunkt, når du skal til at lave dine egne database connections og datamappers: [URL]https://github.com/AndyTheDragon/dat2introTilDatabaser[/URL]
